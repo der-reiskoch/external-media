@@ -6,8 +6,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a media asset repository for Der Reiskoch (The Rice Chef), a personal Thai food blog. It serves as centralized storage for external media assets including Pinterest pins, YouTube thumbnails, Shopify product images, event flyers, and food photography. The repository uses Git as a CDN for media files that are referenced by other applications.
 
-**Git LFS**: This repository uses Git Large File Storage (LFS) to efficiently manage 2,588 media files (~2.6GB). All image files (*.jpg, *.jpeg, *.JPG, *.webp, *.png) are tracked by LFS.
-
 ## Architecture
 
 ### Directory Structure
@@ -58,12 +56,11 @@ npm run clear:gitHistory
 This command runs `.scripts/clearGitHistory.js` which:
 1. Reads repository URL from package.json
 2. Deletes .git directory
-3. Reinitializes repository with Git LFS support
-4. Configures LFS tracking for all image file types
-5. Creates fresh "Initial commit (history reset) with Git LFS"
-6. Force pushes to origin/main
+3. Reinitializes repository
+4. Creates fresh "Initial commit (history reset)"
+5. Pushes incrementally to avoid GitHub's 2GB per-push limit
 
-This is useful for keeping repository size manageable when dealing with large binary files. The script automatically sets up Git LFS tracking during reinitialization.
+This is useful for keeping repository size manageable by removing old Git history while preserving all current files.
 
 ## Development Workflow
 
@@ -87,18 +84,9 @@ This is useful for keeping repository size manageable when dealing with large bi
 - Supported image formats: JPG/JPEG (normalized to .jpg), WebP
 - Keep `.JPG` and `.jpeg` extensions when adding files; deployment will normalize them
 
-## Git LFS Configuration
-
-This repository uses Git Large File Storage (LFS) to efficiently store large media files:
-
-- **Tracked file types**: *.jpg, *.jpeg, *.JPG, *.webp, *.png
-- **Total LFS objects**: 2,588 files (~2.6GB)
-- **Configuration**: See `.gitattributes` for LFS tracking rules
-- **LFS is required**: You must have Git LFS installed (`git lfs install`) to work with this repository
-
 ## Important Notes
 
-- Git LFS must be installed on your system to clone/work with this repository
-- The clear:gitHistory script automatically configures LFS when resetting history
+- The repository contains ~2.6GB of media files across 2,500+ images
+- GitHub has a 2GB per-push limit; the clear:gitHistory script handles this via incremental commits
 - Node version is managed by Volta (v20.19.0)
 - All deployment is automated through npm scripts; manual git operations not needed
