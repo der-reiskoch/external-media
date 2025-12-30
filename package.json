@@ -1,0 +1,20 @@
+{
+  "name": "@der-reiskoch-de/external-media",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node ./.scripts/prepareFiles.js && git add . && git commit -m 'auto-deploy: added new media' && git push",
+    "clear:gitHistory": "node ./.scripts/clearGitHistory.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Der-Reiskoch/external-media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "volta": {
+    "node": "20.19.0"
+  }
+}
