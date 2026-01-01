@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Beitragsseite – Der Reiskoch – Beispiel</title>
+    <title>Fehler 404 – Seite nicht gefunden | Der Reiskoch</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #fff;
-            color: #222;
+            color: #333;
         }
         header {
             background: #000;
@@ -18,54 +18,58 @@
             color: #fff;
             text-align: center;
         }
-        header .nav {
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
             margin-top: 10px;
         }
-        header .nav a {
+        nav a {
             margin: 0 8px;
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
             font-size: 14px;
         }
-        header .nav a:hover {
+        nav a:hover {
             text-decoration: underline;
         }
-
         .container {
-            max-width: 900px;
-            margin: 30px auto;
+            text-align: center;
+            max-width: 800px;
+            margin: 80px auto;
             padding: 0 15px;
         }
-
-        .post-title {
-            font-size: 32px;
+        h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
-        .post-meta {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 25px;
+        p {
+            font-size: 18px;
+            margin: 12px 0;
         }
-
-        .post-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 15px 0;
+        .btn-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
         }
-
-        .post-content p {
-            line-height: 1.7;
-            margin-bottom: 1em;
+        .btn-home:hover {
+            background: #333;
         }
-
         footer {
             background: #f4f4f4;
             padding: 20px;
             font-size: 14px;
             text-align: center;
             color: #555;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         footer a {
             color: #555;
@@ -79,46 +83,11 @@
 
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header / Logo -->
     <header>
-        <div class="logo">
-            <a href="https://www.der-reiskoch.de/" style="color:#fff; text-decoration:none; font-size:24px;">Der Reiskoch</a>
-        </div>
-
-        <nav class="nav">
+        <a href="https://www.der-reiskoch.de/">Der Reiskoch</a>
+        <nav>
             <a href="https://www.der-reiskoch.de/rezepte/">Rezepte</a>
             <a href="https://www.der-reiskoch.de/zutaten/">Zutaten</a>
-            <a href="https://www.der-reiskoch.de/zubehoer/">Zubehör</a>
             <a href="https://www.der-reiskoch.de/inspirationen/">Inspirationen</a>
-            <a href="https://www.der-reiskoch.de/reisen/">Reisen</a>
-            <a href="https://www.der-reiskoch.de/wissenswertes/">Wissenswertes</a>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-
-        <h1 class="post-title">Titel des Beitrags</h1>
-        <div class="post-meta">von Jens (Der Reiskoch) – Datum hier</div>
-
-        <div class="post-content">
-            <img src="https://www.der-reiskoch.de/path/to/image1.jpg" alt="Beitragsbild">
-
-            <p>Hier steht der erste Absatz deines Beitrags. Du kannst beliebigen Text einsetzen, genauso wie weitere Bilder, Listen oder Tabellen.</p>
-
-            <p>Ein weiterer Absatz mit Text, ggf. Zwischenüberschriften oder Tipps zu Rezepten, Zutaten etc.</p>
-
-            <img src="https://www.der-reiskoch.de/path/to/image2.jpg" alt="Weitere Abbildung">
-
-            <p>Schlussabsatz oder Fazit des Artikels.</p>
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2011–2025 Der Reiskoch • <a href="https://www.der-reiskoch.de/impressum/">Impressum</a> • <a href="https://www.der-reiskoch.de/datenschutz/">Datenschutz</a>
-    </footer>
-
-</body>
-</html>
+            <a href="https://www.der-reiskoch.de/reis
