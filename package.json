@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "node ./.scripts/prepareFiles.js && git add . && git commit -m 'auto-deploy: added new media' && git push",
-    "clear:gitHistory": "node ./.scripts/clearGitHistory.js"
+    "clear:gitHistory": "node ./.scripts/clearGitHistory.js",
+    "download:youtube": "node ./.scripts/download-youtube-thumbnails.js"
   },
   "repository": {
     "type": "git",
