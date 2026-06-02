@@ -52,14 +52,23 @@ function download(url, dest) {
 }
 
 async function main() {
+  const targetFile = process.argv[2];
   const allIds = new Set();
-  for (const file of findMarkdownFiles(CONTENT_DIR)) {
-    for (const id of extractVideoIds(fs.readFileSync(file, "utf8"))) {
-      allIds.add(id);
-    }
-  }
 
-  console.log(`Found ${allIds.size} unique YouTube IDs in content`);
+  if (targetFile) {
+    const filePath = path.resolve(targetFile);
+    if (!fs.existsSync(filePath)) {
+      console.error(`File not found: ${filePath}`);
+      process.exit(1);
+    }
+    for (const id of extractVideoIds(fs.readFileSync(filePath, "utf8"))) allIds.add(id);
+    console.log(`Found ${allIds.size} YouTube ID(s) in ${path.basename(filePath)}`);
+  } else {
+    for (const file of findMarkdownFiles(CONTENT_DIR)) {
+      for (const id of extractVideoIds(fs.readFileSync(file, "utf8"))) allIds.add(id);
+    }
+    console.log(`Found ${allIds.size} unique YouTube IDs in content`);
+  }
 
   const missing = [...allIds].filter(
     (id) => !fs.existsSync(path.join(YOUTUBE_DIR, `${id}.jpg`)) || !fs.existsSync(path.join(YOUTUBE_DIR, `${id}.webp`))
